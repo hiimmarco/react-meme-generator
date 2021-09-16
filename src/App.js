@@ -1,10 +1,17 @@
 import './App.css';
-import { useState } from 'react';
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 
 function App() {
-  const [toptext, setToptext] = useState('');
-  const [bottomtext, setBottomtext] = useState('');
+  const [templates, setTemplates] = useState([]);
+  const [topText, setToptext] = useState('');
+  const [bottomText, setBottomtext] = useState('');
+
+  useEffect(() => {
+    fetch('https://api.memegen.link/templates').then((response) =>
+      response.json().then((stream) => setTemplates(stream.blank)),
+    );
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -16,7 +23,7 @@ function App() {
             <input
               className="forminput"
               placeholder="e.g. 'Memes'"
-              value={toptext}
+              value={topText}
               onChange={(event) => setToptext(event.currentTarget.value)}
             />
           </label>
@@ -25,7 +32,7 @@ function App() {
             <input
               className="forminput"
               placeholder="e.g. 'Memes Everywhere'"
-              value={bottomtext}
+              value={bottomText}
               onChange={(event) => setBottomtext(event.currentTarget.value)}
             />
           </label>
@@ -42,8 +49,8 @@ function App() {
           <p>Example:</p>
           <img
             src="./memes_everywhere.png"
-            alt="Placeholder Meme"
-            className="placeholderimg"
+            alt="Example Meme"
+            className="exampleMeme"
           />
         </main>
       </header>
