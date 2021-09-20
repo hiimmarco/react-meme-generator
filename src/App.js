@@ -94,7 +94,7 @@ function App() {
           </label>
 
           <button onClick={generateMeme}>Generate meme</button>
-          <button onClick={downloadMeme}>Generate meme</button>
+          <button onClick={downloadMeme}>Download meme</button>
           {/* Show example and generated meme */}
           <div>
             <p>Example:</p>
