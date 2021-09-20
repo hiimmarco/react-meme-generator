@@ -5,7 +5,8 @@ function App() {
   const [topText, setTopText] = useState('');
   const [bottomText, setBottomText] = useState('');
   const [templates, setTemplates] = useState([]);
-  const [selectedTemplate, setSelectedTemplate] = useState('SELECT A TEMPLATE');
+  const [selectedTemplate, setSelectedTemplate] = useState('');
+  const [newMeme, setNewMeme] = useState('');
 
   const baseUrl = 'https://api.memegen.link/images/';
 
@@ -28,6 +29,23 @@ function App() {
   const handleTemplateChange = (event) => {
     setSelectedTemplate(event.target.value);
   };
+  // Function to assign the given top text to the topText state variable
+
+  const handleTopTextChange = (event) => {
+    setTopText(event.currentTarget.value);
+  };
+
+  // Function to assign the given bottom text to the bottomText state variable
+
+  const handleBottomTextChange = (event) => {
+    setBottomText(event.currentTarget.value);
+  };
+
+  const generateMeme = () => {
+    setNewMeme(
+      `https://api.memegen.link/images/${selectedTemplate}/${topText}/${bottomText}.jpg`,
+    );
+  };
 
   // Return UI elements
   return (
@@ -43,7 +61,7 @@ function App() {
               className="forminput"
               placeholder="e.g. 'Memes'"
               value={topText}
-              onChange={(event) => setTopText(event.currentTarget.value)}
+              onChange={handleTopTextChange}
             />
           </label>
           <label className="formlabel">
@@ -52,7 +70,7 @@ function App() {
               className="forminput"
               placeholder="e.g. 'Memes Everywhere'"
               value={bottomText}
-              onChange={(event) => setBottomText(event.currentTarget.value)}
+              onChange={handleBottomTextChange}
             />
           </label>
           <label>
@@ -70,13 +88,15 @@ function App() {
             </select>
           </label>
 
-          <button>Generate meme</button>
+          <button onClick={generateMeme}>Generate meme</button>
           <p>Your generated meme:</p>
+
           <img
             src="./memes_everywhere.png"
             alt="Example Meme"
             className="exampleMeme"
           />
+          <img src={newMeme} alt="Meme" />
         </main>
       </header>
     </div>
@@ -84,11 +104,3 @@ function App() {
 }
 
 export default App;
-
-/*
-{templates.map((item) => (
-  <option value={item.id} key={item.id}>
-    {item.name}
-  </option>
-))}
-*/
