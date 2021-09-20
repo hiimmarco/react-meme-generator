@@ -8,8 +8,6 @@ function App() {
   const [selectedTemplate, setSelectedTemplate] = useState('');
   const [newMeme, setNewMeme] = useState('');
 
-  const baseUrl = 'https://api.memegen.link/images/';
-
   /* Get array of template information (id, name) to use in dropdown*/
 
   useEffect(() => {
@@ -45,6 +43,12 @@ function App() {
     setNewMeme(
       `https://api.memegen.link/images/${selectedTemplate}/${topText}/${bottomText}.jpg`,
     );
+  };
+
+  // Function to assign the given bottom text to the bottomText state variable
+
+  const onDownloadClick = () => {
+    saveAs(customUrl, `${imageStyle}-${topText}-${bottomText}.jpg`);
   };
 
   // Return UI elements
@@ -89,14 +93,18 @@ function App() {
           </label>
 
           <button onClick={generateMeme}>Generate meme</button>
-          <p>Your generated meme:</p>
+          {/* Show example and generated meme */}
+          <div>
+            <p>Example:</p>
 
-          <img
-            src="./memes_everywhere.png"
-            alt="Example Meme"
-            className="exampleMeme"
-          />
-          <img src={newMeme} alt="Meme" />
+            <img
+              src="./memes_everywhere.png"
+              alt="Example Meme"
+              className="exampleMeme"
+            />
+            <p>Your generated meme:</p>
+            <img src={newMeme} alt="Meme" />
+          </div>
         </main>
       </header>
     </div>
