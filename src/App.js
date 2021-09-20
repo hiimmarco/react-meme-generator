@@ -1,4 +1,5 @@
 import './App.css';
+import saveAs from 'file-saver';
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -47,8 +48,8 @@ function App() {
 
   // Function to assign the given bottom text to the bottomText state variable
 
-  const onDownloadClick = () => {
-    saveAs(customUrl, `${imageStyle}-${topText}-${bottomText}.jpg`);
+  const downloadMeme = () => {
+    saveAs(newMeme, `${topText}-${bottomText}.jpg`);
   };
 
   // Return UI elements
@@ -93,6 +94,7 @@ function App() {
           </label>
 
           <button onClick={generateMeme}>Generate meme</button>
+          <button onClick={downloadMeme}>Generate meme</button>
           {/* Show example and generated meme */}
           <div>
             <p>Example:</p>
