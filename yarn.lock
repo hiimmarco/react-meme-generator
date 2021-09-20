@@ -1882,6 +1882,13 @@
     "@babel/runtime" "^7.12.5"
     "@testing-library/dom" "^7.28.1"
 
+"@testing-library/user-event@*":
+  version "13.2.1"
+  resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-13.2.1.tgz#7a71a39e50b4a733afbe2916fa2b99966e941f98"
+  integrity sha512-cczlgVl+krjOb3j1625usarNEibI0IFRJrSWX9UsJ1HKYFgCQv9Nb7QAipUDXl3Xdz8NDTsiS78eAkPSxlzTlw==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+
 "@testing-library/user-event@^12.1.10":
   version "12.8.3"
   resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-12.8.3.tgz#1aa3ed4b9f79340a1e1836bc7f57c501e838704a"
@@ -2095,12 +2102,19 @@
   resolved "https://registry.yarnpkg.com/@types/tapable/-/tapable-1.0.6.tgz#a9ca4b70a18b270ccb2bc0aaafefd1d486b7ea74"
   integrity sha512-W+bw9ds02rAQaMvaLYxAbJ6cvguW/iJXNT6lTssS1ps6QdrMKttqEAMEG/b5CR8TZl3/L7/lH0ZV5nNR1LXikA==
 
-"@types/testing-library__jest-dom@^5.9.1":
+"@types/testing-library__jest-dom@^5.14.1", "@types/testing-library__jest-dom@^5.9.1":
   version "5.14.1"
   resolved "https://registry.yarnpkg.com/@types/testing-library__jest-dom/-/testing-library__jest-dom-5.14.1.tgz#014162a5cee6571819d48e999980694e2f657c3c"
   integrity sha512-Gk9vaXfbzc5zCXI9eYE9BI5BNHEp4D3FWjgqBE/ePGYElLAP+KvxBcsdkwfIVvezs605oiyd/VrpiHe3Oeg+Aw==
   dependencies:
     "@types/jest" "*"
+
+"@types/testing-library__user-event@^4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@types/testing-library__user-event/-/testing-library__user-event-4.2.0.tgz#b6a4e997f529e38e7ea766dfaeae107a421759ef"
+  integrity sha512-vHuDMJY+UooghUtgFX+OucrhQWLLNUwgSOyvVkHNr+5gYag3a7xVkWNF0hyZID/+qHNw87wFqM/5uagFZ5eQIg==
+  dependencies:
+    "@testing-library/user-event" "*"
 
 "@types/uglify-js@*":
   version "3.12.0"
