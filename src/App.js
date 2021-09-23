@@ -92,19 +92,17 @@ function App() {
               ))}
             </select>
           </label>
-
-          <button onClick={generateMeme}>Generate meme</button>
-          <button onClick={downloadMeme}>Download meme</button>
+          <div className="buttons">
+            <button onClick={generateMeme} className="button">
+              Generate meme
+            </button>
+            <button onClick={downloadMeme} className="button">
+              Download meme
+            </button>
+          </div>
           {/* Show example and generated meme */}
           <div>
-            <p>Example:</p>
-
-            <img
-              src="./memes_everywhere.png"
-              alt="Example Meme"
-              className="exampleMeme"
-            />
-            <p>Your generated meme:</p>
+            <h3>Your generated meme:</h3>
             <img src={newMeme} alt="Meme" />
           </div>
         </main>
