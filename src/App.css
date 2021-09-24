@@ -44,6 +44,8 @@ label {
 
 .button {
   border: none;
+  margin-top: 20px;
+  margin-right: 20px;
   margin-bottom: 8px;
   height: 48px;
   width: auto;
@@ -53,6 +55,12 @@ label {
   background-color: blueviolet;
   color: white;
   cursor: pointer;
+}
+
+.downloadbutton {
+  background-color: white;
+  border: 3px solid blueviolet;
+  color: blueviolet;
 }
 
 .buttons {
